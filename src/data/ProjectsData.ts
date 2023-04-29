@@ -1,5 +1,5 @@
 
-interface ProjectsType {
+export interface ProjectsType {
   title: string
   description: string
   image: string
@@ -15,7 +15,7 @@ export const ProjectsData: ProjectsType[] = [
     image: 'https://erfjs.com/images/protfolio/my_portfolio/img-1.png',
     GitHub: '',
     hosted: 'https://erfjs.com',
-    tags: ['python','javaScript','reactJs','typeScript']
+    tags: ['python','javaScript','react','typeScript','django']
   },
   {
     title: 'Animated Portfolio',
@@ -23,7 +23,7 @@ export const ProjectsData: ProjectsType[] = [
     image: 'https://raw.githubusercontent.com/erfjs/animated-portfolio/main/src/assets/example.png',
     GitHub: 'https://github.com/erfjs/animated-portfolio',
     hosted: 'https://animated-portfolio.erfjs.com/',
-    tags: ['python','javaScript','reactJs','typeScript']
+    tags: ['python','javaScript','react','typeScript']
   },
   {
     title: 'Personalized Card | Ejbank',
@@ -31,7 +31,7 @@ export const ProjectsData: ProjectsType[] = [
     image: 'https://raw.githubusercontent.com/erfjs/ejbank/main/img/example.png',
     GitHub: 'https://github.com/erfjs/ejbank',
     hosted: `https://ejbank.erfjs.com`,
-    tags: ['python','javaScript','reactJs','typeScript']
+    tags: ['python','javaScript','react','typeScript']
   },
   {
     title: 'React Todo List',
@@ -39,7 +39,7 @@ export const ProjectsData: ProjectsType[] = [
     image: 'https://raw.githubusercontent.com/erfjs/Todo-list/main/readme/example.png',
     GitHub: 'https://github.com/erfjs/Todo-list',
     hosted: 'https://todo-app.erfjs.com',
-    tags: ['python','javaScript','reactJs','typeScript']
+    tags: ['python','javaScript','react','typeScript']
   },
   {
     title: 'React weather checker',
@@ -47,7 +47,7 @@ export const ProjectsData: ProjectsType[] = [
     image: 'https://raw.githubusercontent.com/erfjs/weather-checker/main/readme/example.png',
     GitHub: 'https://github.com/erfjs/weather-checker',
     hosted: `https://weather-checker.erfjs.com`,
-    tags: ['python','javaScript','reactJs','typeScript']
+    tags: ['python','javaScript','react','typeScript']
   },
   {
     title: 'Foodstuffs Store',
@@ -55,7 +55,7 @@ export const ProjectsData: ProjectsType[] = [
     image: 'https://raw.githubusercontent.com/erfjs/foodstuffs_store/main/readme/example2.png',
     GitHub: 'https://github.com/erfjs/foodstuffs_store',
     hosted: `https://foodstuffs-store.erfjs.com`,
-    tags: ['python','javaScript','reactJs','typeScript']
+    tags: ['python','javaScript','react','typeScript']
   },
   {
     title: 'React weather checker',
@@ -63,7 +63,7 @@ export const ProjectsData: ProjectsType[] = [
     image: 'https://raw.githubusercontent.com/erfjs/weather-checker/main/readme/example.png',
     GitHub: 'https://github.com/erfjs/weather-checker',
     hosted: `https://weather-checker.erfjs.com`,
-    tags: ['python','javaScript','reactJs','typeScript']
+    tags: ['python','javaScript','react','typeScript']
   },
   {
     title: 'React weather checker',
@@ -71,6 +71,6 @@ export const ProjectsData: ProjectsType[] = [
     image: 'https://raw.githubusercontent.com/erfjs/weather-checker/main/readme/example.png',
     GitHub: 'https://github.com/erfjs/weather-checker',
     hosted: `https://weather-checker.erfjs.com`,
-    tags: ['python','javaScript','reactJs','typeScript']
+    tags: ['python','javaScript','react','typeScript']
   },
 ];

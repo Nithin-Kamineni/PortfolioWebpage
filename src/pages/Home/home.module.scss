@@ -75,6 +75,28 @@
     text-align: center;
   }
 
+  .rolesGroup {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #3f3f3f;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    .roles {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #3f3f3f;
+      text-align: center;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+  }
+
+  
+
   .about {
     margin-bottom: 1rem;
     font-size: 1.8rem;
