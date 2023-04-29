@@ -5,6 +5,7 @@ import { BlogCard } from "../../components/BlogCard/BlogCard";
 import { BlogsData } from "../../data/BlogData";
 import { pageVariants, pageTransition } from "../../utils/FramerAnimation";
 import styles from "./blogs.module.scss";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const blogsOpen = "<blogs>";
 const blogsClose = "</blogs>";
@@ -22,7 +23,8 @@ const Blogs = () => {
         <div className={styles.wrapper}>
           <h3 className={styles.projectsOpen}>{blogsOpen}</h3>
 
-          <div style={{position: 'relative', height:'100%'}} className={styles.projects_content}>
+          <div style={{position: 'relative', height:'100%', zIndex:1}} className={styles.projects_content}>
+          <ChakraProvider>
             {BlogsData.map((item, index) =>
               index % 2 === 0 ? (
                 <Flip top key={item.title}>
@@ -48,6 +50,7 @@ const Blogs = () => {
                 </Flip>
               )
             )}
+            </ChakraProvider>
           </div>
 
           <h3 className={styles.projectsClose}>{blogsClose}</h3>

@@ -16,6 +16,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { MdOutlineWork } from "react-icons/md";
+import Projects from '../Projects';
 
 
 const welcomeText = `I Am, ${AboutData.firstName}  ${AboutData.lastName}`;
@@ -75,6 +76,12 @@ const Home = () => {
           </div>
         </Row>
         {/* <Divider /> */}
+        <hr className="rounded"></hr>\
+        <Row>
+          <div>
+            <Projects />
+          </div>
+        </Row>
         <hr className="rounded"></hr>
         <Row>
           <div>

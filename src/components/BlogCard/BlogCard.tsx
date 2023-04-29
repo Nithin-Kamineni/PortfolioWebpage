@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import styles from "./projectCard.module.scss";
+import { TwitterShareButton, TwitterIcon, LinkedinIcon } from 'react-share';
 
 interface BlogCardProps {
   title: string;
@@ -9,14 +10,27 @@ interface BlogCardProps {
   url: string;
   blogTags: string[];
 }
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Center
+} from '@chakra-ui/react'
+import { Portal } from "react-portal";
 import { Button, ButtonGroup, IconButton } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
-import { HStack, Heading, Stack, Text } from "@chakra-ui/layout";
+import {  Divider, HStack, Heading, Stack, Text } from "@chakra-ui/layout";
 
-import { Card, CardBody, CardFooter, ChakraProvider, Tag, TagCloseButton, TagLabel } from "@chakra-ui/react";
+import { Card, CardBody, CardFooter, ChakraProvider, PopoverProps, Tag, TagCloseButton, TagLabel, position } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { FaBlogger, FaGithub, FaRocket, FaShare } from "react-icons/fa";
+import { FaBlogger, FaGithub, FaRocket, FaShare, FaUserLock } from "react-icons/fa";
 import { BiShare } from "react-icons/bi";
+// import { PhoneIcon, AddIcon, WarningIcon, LinkIcon } from '@chakra-ui/icons';
 import "./style.css";
 import {
   Popover,
@@ -30,6 +44,9 @@ import {
   PopoverAnchor,
 } from '@chakra-ui/react'
 import { blogHashMap } from "../../data/colorScheme";
+import { SiGmail, SiStackoverflow } from "react-icons/si";
+import { Link } from "react-router-dom";
+import { AiOutlineLink } from "react-icons/ai";
 
 const BlogCard: FC<BlogCardProps> = (props) => {
   const [hovered, setHovered] = useState(false);
@@ -41,13 +58,19 @@ const BlogCard: FC<BlogCardProps> = (props) => {
   const handleMouseLeave = () => {
     setHovered(false);
   };
+
+  interface CustomPopoverProps extends PopoverProps {
+    appendToBody?: boolean;
+  }
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <div> 
-    <ChakraProvider>
+    <div>
+      {/* <ChakraProvider> */}
       <Card maxW="sm" className="ProjectDisplayCard">
         <CardBody>
           <div className="image-hover-container">
-            <Image style={{height:"250px", width:"400px"}}
+            <Image style={{ height: "250px", width: "400px" }}
               src={props.image}
               alt={props.title}
               borderRadius="lg"
@@ -94,30 +117,58 @@ const BlogCard: FC<BlogCardProps> = (props) => {
                 Read More
               </Button>
             </a>
-            
-            <div data-container="body" style={{ position: "relative", zIndex: 9990 }}> 
-            <Popover isLazy>
-              <PopoverTrigger>
-                <Button variant='ghost' colorScheme='blackAlpha' leftIcon={<BiShare />}>
-                  Share
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent>
-                <PopoverHeader fontWeight='semibold'>Popover placement</PopoverHeader>
-                <PopoverArrow />
-                <PopoverCloseButton />
-                <PopoverBody>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore.
-                </PopoverBody>
-              </PopoverContent>
-            </Popover>
+
+            <div data-container="body">
+              <Button variant='ghost' colorScheme='blackAlpha' onClick={onOpen} leftIcon={<BiShare />}>
+                Share
+              </Button>
+              <Modal isOpen={isOpen} onClose={onClose} size="sm">
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalHeader>Modal Title</ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody>
+                    {/* <Lorem count={2} /> */}
+                    <Center>
+                      <IconButton
+                        aria-label='Call Segun'
+                        size='lg'
+                        icon={<TwitterIcon />}
+                      />
+                      <IconButton
+                        aria-label='Call Segun'
+                        size='lg'
+                        icon={<LinkedinIcon />}
+                      />
+                      <IconButton
+                        aria-label='Call Segun'
+                        size='lg'
+                        icon={<SiGmail />}
+                      />
+                      <IconButton
+                        aria-label='Call Segun'
+                        colorScheme='teal'
+                        size='lg'
+                        icon={<SiStackoverflow />}
+                      />
+                    </Center>
+                  </ModalBody>
+
+                  <ModalFooter>
+                    <Button colorScheme='blue' mr={3} onClick={onClose}>
+                      Close
+                    </Button>
+                    <Button variant='solid' colorScheme='gray'>Copy Link</Button>
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
             </div>
+
 
           </ButtonGroup>
         </CardFooter>
       </Card>
-    </ChakraProvider>
+      {/* </ChakraProvider> */}
     </div>
   );
 };
