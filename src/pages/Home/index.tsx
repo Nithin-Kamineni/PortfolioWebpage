@@ -9,7 +9,7 @@ import profilePic from "../../assets/profile.png";
 import Experience from "../Experience";
 import Skills from "../Skills";
 import { Row, Col, Container } from "react-bootstrap";
-
+import Typewriter from "typewriter-effect";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -31,6 +31,24 @@ const Home = () => {
               <h2 className={styles.title}>{welcomeText}</h2>
             </Zoom>
             <Zoom cascade>
+              <span className={styles.rolesGroup}>
+                <div className={styles.roles}>{'<'}</div>
+                <div className={styles.roles}>
+                <Typewriter 
+                  options={{
+                    strings: [
+                      "FullStack Developer",
+                      "Backend Developer",
+                      "Software Developer",
+                      "Data Engineer",
+                    ],
+                    autoStart: true,
+                    loop: true,
+                    deleteSpeed: 50,
+                  }}
+                /></div>
+                <div className={styles.roles}>{'/>'}</div>
+              </span>
               <h3 className={styles.about}>{AboutData.about1}</h3>
               <h3 className={styles.about_next}>{AboutData.about2}</h3>
               <div className={styles.links}>

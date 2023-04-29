@@ -26,6 +26,14 @@
       letter-spacing: 0.5px;
     }
 
+    .filterTags {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
     .projectsClose {
       font-size: 2rem;
       font-weight: 600;
