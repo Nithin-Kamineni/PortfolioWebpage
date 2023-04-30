@@ -4,13 +4,13 @@
 .projects {
   position: relative;
   // padding: calc(#{$navbarheight} + 1rem) 0 2rem 0;
-  background-color: $lightdarkbackground1;
+  background-color: $lightbackground;
   overflow-x: hidden;
 
   .wrapper {
     max-width: 1440px;
     margin: 20px auto;
-    padding: 0 20px;
+    padding: 0 20x;
     position: relative;
 
     .projectsOpen {

@@ -1,34 +1,42 @@
-interface LinkType {
+export interface LinkType {
+  id: string,
   title: string;
   linkTo: string;
 }
 
 export const LinksData: LinkType[] = [
   {
+    id:'home',
     title: 'Home',
-    linkTo: '/',
+    linkTo: '#home',
   },
   {
+    id:'experience',
+    title: 'Experience',
+    linkTo: '#experience',
+  },
+  {
+    id:'projects',
     title: 'Projects',
-    linkTo: '/projects',
-  },
-  // {
-  //   title: 'Experience',
-  //   linkTo: '/experience',
-  // },
-  // {
-  //   title: 'Skills',
-  //   linkTo: '/skills',
-  // },
-  {
-    title: 'Contact',
-    linkTo: '/contact',
+    linkTo: '#projects',
   },
   {
+    id:'skills',
+    title: 'Skills',
+    linkTo: '#skills',
+  },
+  {
+    id:'blogs',
     title: 'Blogs',
-    linkTo: '/blogs'
+    linkTo: '#blogs'
   },
   {
+    id:'contact',
+    title: 'Contact',
+    linkTo: '#contact',
+  },
+  {
+    id:'resume',
     title: 'Resume',
     linkTo: 'https://drive.google.com/file/d/1hPL8aVCV_U5vv6sSt25x-Qotd-twoQ6w/view?usp=sharing'
   }

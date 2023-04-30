@@ -3,11 +3,47 @@
 
 .contact {
   min-height: 100vh;
-  padding: calc(#{$navbarheight} + 2rem) 2rem 2rem 2rem;
+  // position: relative;
+  // padding: calc(#{$navbarheight} + 2rem) 2rem 2rem 2rem;
   background-color: $lightbackground;
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
+
+  .formTagsOpenClose{
+    // max-width: 1280px;
+    position: relative;
+    max-width: 1440px;
+    margin: 20px auto;
+    padding: 0 20px;
+    
+    .contactFormOpen {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: $lightwhite;
+      background: $primarylight;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 8px 10px;
+      font-family: 'Ubuntu Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+    
+  
+    .contactFormClose {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      color: $lightwhite;
+      background: $primarylight;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 8px 10px;
+      font-family: 'Ubuntu Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+
 
   .wrapper {
     max-width: 1080px;
@@ -27,8 +63,15 @@
       .contactOpen {
         font-size: 2rem;
         font-weight: 600;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0rem;
         color: #000000b0;
+      }
+
+      .contactInfo {
+        font-size: 0.8rem;
+        font-weight: 300;
+        margin-bottom: 0.5rem;
+        color: #000000;
       }
 
       form {
@@ -78,6 +121,7 @@
       width: 380px;
     }
   }
+}
 }
 
 @media (max-width: 900px) {

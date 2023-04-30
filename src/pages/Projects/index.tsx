@@ -110,7 +110,7 @@ const Projects = () => {
                   <Button colorScheme={selectedButton === 'Angular' ? 'blue' : 'gray'} leftIcon={<FaAngular />} size='xs' onClick={Angular}>
                     Angular
                   </Button>
-                  <Button colorScheme={selectedButton === 'All' ? 'blue' : 'gray'} leftIcon={<FaTwitter />} size='xs' onClick={All}>
+                  <Button colorScheme={selectedButton === 'All' ? 'blue' : 'gray'} size='xs' onClick={All}>
                     All
                   </Button>
                 </div>

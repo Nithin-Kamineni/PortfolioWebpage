@@ -40,8 +40,31 @@
       transition: 0.3s all ease-in-out;
 
       &:hover {
-        background-color: rgba(26, 32, 43, 0.5);
+        background-color: rgba(26, 32, 43, 0.294);
       }
+    }
+
+    .resumelink {
+      text-decoration: none;
+      padding: 0.5vw 0.7vw;
+      margin: 0 0.0vw;
+      transition: 0.5s all ease-in-out;
+      color: $lightwhite;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      transition: 0.3s all ease-in-out;
+
+      &:hover {
+        background-color: rgba(26, 32, 43, 0.294);
+      }
+    }
+
+    .active {
+      transform: scale(0);
+      background-color: rgba(21, 26, 35, 0.5);
+      transition: 0.3s all ease-in-out;
     }
   }
 

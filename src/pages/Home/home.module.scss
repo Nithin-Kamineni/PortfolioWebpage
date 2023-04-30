@@ -154,6 +154,12 @@
   }
 }
 
+.alternate{
+  background-color: $lightdarkbackground2;
+  // background-color: #9ea9ab;
+
+}
+
 @media (max-width: 500px) {
   .home {
     .image {
