@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import styles from "./projectCard.module.scss";
-import { TwitterShareButton, TwitterIcon, LinkedinIcon } from 'react-share';
+import { TwitterShareButton, TwitterIcon, LinkedinIcon, LinkedinShareButton, MailruShareButton } from 'react-share';
 
 interface BlogCardProps {
   title: string;
@@ -19,12 +19,13 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  Center
+  Center,
+  useToast
 } from '@chakra-ui/react'
 import { Portal } from "react-portal";
 import { Button, ButtonGroup, IconButton } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
-import {  Divider, HStack, Heading, Stack, Text } from "@chakra-ui/layout";
+import { Divider, HStack, Heading, Stack, Text } from "@chakra-ui/layout";
 
 import { Card, CardBody, CardFooter, ChakraProvider, PopoverProps, Tag, TagCloseButton, TagLabel, position } from "@chakra-ui/react";
 import React, { useState } from "react";
@@ -63,6 +64,10 @@ const BlogCard: FC<BlogCardProps> = (props) => {
     appendToBody?: boolean;
   }
 
+  const toast = useToast({
+    position: 'top'
+  })
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <div>
@@ -85,6 +90,8 @@ const BlogCard: FC<BlogCardProps> = (props) => {
                   colorScheme="ghost"
                   aria-label="Call Segun"
                   icon={<FaBlogger />}
+                  as="a"
+                  href={props.url}
                 />
               </button>
             </div>
@@ -95,7 +102,7 @@ const BlogCard: FC<BlogCardProps> = (props) => {
               {props.description}
             </Text>
           </Stack>
-          <HStack spacing={1}>
+          <div style={{ marginTop: '10px' }}>
             {props.blogTags.map((tag) => (
               <Tag
                 size={'sm'}
@@ -103,12 +110,13 @@ const BlogCard: FC<BlogCardProps> = (props) => {
                 borderRadius='full'
                 variant='solid'
                 colorScheme={blogHashMap[tag.toLowerCase()]} //"techHashMap[tag]"}
+                marginRight="0.3rem"
               >
                 <TagLabel>{tag}</TagLabel>
 
               </Tag>
             ))}
-          </HStack>
+          </div>
         </CardBody>
         <CardFooter>
           <ButtonGroup spacing="2">
@@ -130,27 +138,35 @@ const BlogCard: FC<BlogCardProps> = (props) => {
                   <ModalBody>
                     {/* <Lorem count={2} /> */}
                     <Center>
-                      <IconButton
-                        aria-label='Call Segun'
-                        size='lg'
-                        icon={<TwitterIcon />}
-                      />
+                      <TwitterShareButton url={props.url}>
+                        <IconButton
+                          aria-label='Call Segun'
+                          size='lg'
+                          icon={<TwitterIcon />}
+                        />
+                      </TwitterShareButton>
+                      <LinkedinShareButton url={props.url}>
                       <IconButton
                         aria-label='Call Segun'
                         size='lg'
                         icon={<LinkedinIcon />}
                       />
+                      </LinkedinShareButton>
+                      <MailruShareButton url={props.url}>
                       <IconButton
                         aria-label='Call Segun'
                         size='lg'
                         icon={<SiGmail />}
                       />
+                      </MailruShareButton>
+                      <TwitterShareButton url={props.url}>
                       <IconButton
                         aria-label='Call Segun'
                         colorScheme='teal'
                         size='lg'
                         icon={<SiStackoverflow />}
                       />
+                      </TwitterShareButton>
                     </Center>
                   </ModalBody>
 
@@ -158,7 +174,17 @@ const BlogCard: FC<BlogCardProps> = (props) => {
                     <Button colorScheme='blue' mr={3} onClick={onClose}>
                       Close
                     </Button>
-                    <Button variant='solid' colorScheme='gray'>Copy Link</Button>
+                    <Button variant='solid' colorScheme='gray'
+                      onClick={async () => {
+                        await navigator.clipboard.writeText(props.url)
+                        toast({
+                          title: 'link copied.',
+                          status: 'success',
+                          duration: 500,
+                          isClosable: true,
+                        })
+                      }}
+                    >Copy Link</Button>
                   </ModalFooter>
                 </ModalContent>
               </Modal>

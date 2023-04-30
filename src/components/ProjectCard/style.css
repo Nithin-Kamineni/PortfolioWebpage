@@ -3,7 +3,7 @@ body {
     -webkit-font-smoothing: auto;
     -moz-font-smoothing: auto;
     -moz-osx-font-smoothing: grayscale;
-    font-smoothing: auto;
+
     text-rendering: optimizeLegibility;
     font-smooth: always;
     -webkit-tap-highlight-color: transparent;
@@ -12,9 +12,6 @@ body {
   .ProjectDisplayCard:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
-/* image {
-
-} */
 
   h1 {
     font-size: 1.5rem;
@@ -22,7 +19,7 @@ body {
   
   .ProjectDisplayCard {
     width: 400px;
-    height: 750px;
+    height: 950px;
   }
   
   .image-hover-container {

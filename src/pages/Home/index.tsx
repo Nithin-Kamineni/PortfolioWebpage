@@ -92,7 +92,7 @@ const Home = () => {
           </div>
         </Row>
         </section>
-        <section id="projects">
+        <section id="about">
         <hr className="rounded"></hr>
         <Row>
           <div>

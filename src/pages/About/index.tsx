@@ -19,6 +19,10 @@ import {
 import { ReactElement } from 'react';
 import styles from "./about.module.scss";
 import { AboutData } from "../../data/AboutData";
+import { FaCode } from 'react-icons/fa';
+import { BiGlassesAlt } from 'react-icons/bi';
+import {GiTeamUpgrade} from "react-icons/gi"
+import { TbPerspective } from 'react-icons/tb';
 
 interface FeatureProps {
   text: string;
@@ -33,8 +37,8 @@ const Feature = ({ text, icon, iconBg }: FeatureProps) => {
   return (
     <Stack direction={'row'} align={'center'}>
       <Flex
-        w={8}
-        h={8}
+        w={10}
+        h={10}
         align={'center'}
         justify={'center'}
         rounded={'full'}
@@ -80,7 +84,7 @@ export default function About() {
               {AboutData.aboutFeature1 &&
                 <Feature
                   icon={
-                    <Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />
+                    <Icon as={BiGlassesAlt} color={'yellow.500'} w={5} h={5} />
                   }
                   iconBg={useColorModeValue('yellow.100', 'yellow.900')}
                   text={AboutData.aboutFeature1}
@@ -88,14 +92,14 @@ export default function About() {
               }
               {AboutData.aboutFeature2 &&
               <Feature
-                icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
+                icon={<Icon as={GiTeamUpgrade} color={'green.500'} w={5} h={5} />}
                 iconBg={useColorModeValue('green.100', 'green.900')}
                 text={AboutData.aboutFeature2}
               />}
               {AboutData.aboutFeature3 &&
               <Feature
                 icon={
-                  <Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />
+                  <Icon as={TbPerspective} color={'purple.500'} w={5} h={5} />
                 }
                 iconBg={useColorModeValue('purple.100', 'purple.900')}
                 text={AboutData.aboutFeature3}

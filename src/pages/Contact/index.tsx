@@ -5,7 +5,7 @@ import Lottie from "react-lottie";
 import { pageVariants, pageTransition } from "../../utils/FramerAnimation";
 import styles from "./contact.module.scss";
 import lottieData from "../../assets/email.json";
-import { Button } from '@chakra-ui/react';
+import { Button, useToast } from '@chakra-ui/react';
 import { MdEmail, MdPhone } from "react-icons/md";
 
 const ContactFormOpen = "<contact form>";
@@ -21,6 +21,8 @@ const Contact = () => {
     message: "",
   });
 
+  const toast = useToast();
+
   const handleOnchange = (e: any) => {
     setContactData({ ...contactData, [e.target.name]: e.target.value });
   };
@@ -28,6 +30,12 @@ const Contact = () => {
   const handleOnsubmit = (e: any) => {
     e.preventDefault();
     console.log(contactData);
+    toast({
+      title: 'sent',
+      status: 'success',
+      duration: 500,
+      isClosable: true,
+    })
     setContactData({
       name: "",
       email: "",

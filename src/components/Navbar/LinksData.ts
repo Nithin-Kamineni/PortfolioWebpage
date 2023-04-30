@@ -26,6 +26,11 @@ export const LinksData: LinkType[] = [
     linkTo: '#skills',
   },
   {
+    id:'about',
+    title: 'About',
+    linkTo: '#about',
+  },
+  {
     id:'blogs',
     title: 'Blogs',
     linkTo: '#blogs'

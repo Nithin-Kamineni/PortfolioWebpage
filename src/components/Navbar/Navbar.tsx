@@ -62,7 +62,7 @@ const Navbar = () => {
               {link.title}
             </reactScroll.Link> :
               <span className={styles.resumelink}>
-                <a href="https://example.com" onClick={() => window.location.assign('https://example.com')}>
+                <a href={link.linkTo} onClick={() => window.location.assign('https://example.com')}>
                   Resume
                 </a>
               </span>
