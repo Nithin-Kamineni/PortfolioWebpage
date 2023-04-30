@@ -19,7 +19,8 @@ body {
   
   .ProjectDisplayCard {
     width: 400px;
-    height: 950px;
+    height: 1050px;
+    color: blue;
   }
   
   .image-hover-container {

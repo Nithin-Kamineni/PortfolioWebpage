@@ -45,7 +45,7 @@ export const ProjectsData: ProjectsType[] = [
     title: 'Portfolio | Private Project',
     description: `Personal website to display skills and achivments`,
     image: 'https://user-images.githubusercontent.com/45392510/235372460-89e48e6f-a621-4dc9-bcdc-111cafe7a773.png',
-    GitHub: '',
+    GitHub: 'https://github.com/Nithin-Kamineni/PortfolioWebpage',
     hosted: 'https://nithinkamineni.com',
     tags: ['python','javaScript','react','typeScript','django','frontend']
   },

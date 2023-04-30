@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import styles from "./projectCard.module.scss";
+// import styles from "./projectCard.module.scss";
 
 interface ProjectCardProps {
   title: string;
@@ -17,9 +17,9 @@ import { HStack, Heading, Stack, Text } from "@chakra-ui/layout";
 import { Card, CardBody, CardFooter, Tag, TagLabel } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FaGithub, FaRocket } from "react-icons/fa";
-import "./style.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { blogHashMap, techHashMap } from "../../data/colorScheme";
+import "./style.css";
 
 const ProjectCard: FC<ProjectCardProps> = (props) => {
   const [hovered, setHovered] = useState(false);
@@ -32,8 +32,8 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
     setHovered(false);
   };
   return (
-    // <ChakraProvider>
-      <Card maxW="md" className="ProjectDisplayCard">
+    <ChakraProvider>
+      <Card className="ProjectDisplayCard" style={{height:'auto'}}>
         <CardBody>
           <div className="image-hover-container">
             <Image
@@ -114,7 +114,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
           </ButtonGroup>
         </CardFooter>
       </Card>
-    
+      </ChakraProvider>
   );
 };
 
