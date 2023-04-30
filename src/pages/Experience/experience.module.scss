@@ -42,9 +42,11 @@
   left: 0;
   // min-height: calc(100vh - #{$navbarheight});
   width: 100%;
-  margin-top: $navbarheight;
+  // margin-top: $navbarheight;
+  
   padding: 1rem 0;
-  background-color: $lightbackground;
+  // background-color: $lightbackground;
+  background-color: $lightdarkbackground1;
   // @include animation('slide-left 0.8s 1');
 
   .wrapper {

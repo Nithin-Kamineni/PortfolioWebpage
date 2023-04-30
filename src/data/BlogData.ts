@@ -9,32 +9,20 @@ interface BlogType {
   
   export const BlogsData: BlogType[] = [
     {
-      title: 'Portfolio | Private Project',
-      description: `Fastest Landing page built with React, Next Js and Styled Components. modern monorepo architecture. Minimal design`,
-      image: 'https://erfjs.com/images/protfolio/my_portfolio/img-1.png',
-      url: 'google.com',
-      blogTags: ['Devops','Hosting','Nginx','chatGPT'],
+      title: 'AI can write your code, are you scared codder? | Chat GPT',
+      description: `What if I told you, a day will come in the future where there is a super AI that can write Complex...`,
+      // image: "../blogsImages/blogGPT.png",
+      image: "https://miro.medium.com/v2/resize:fit:786/format:webp/1*m7fh7sZPerbKScb3xSNWng.png",
+      // image: "../assets/profile.png",
+      url: 'https://medium.com/@nithinkamineni1/ai-can-write-your-code-are-scared-codder-65860ce44ee',
+      blogTags: ['chatGPT'],
     },
     {
-      title: 'Animated Portfolio',
-      description: `Portfolio website built with React v18.2, Typescript,  react-router-dom v6, framer-motion, react-icons, Scss`,
-      image: 'https://raw.githubusercontent.com/erfjs/animated-portfolio/main/src/assets/example.png',
-      url: 'google.com',
-      blogTags: ['Devops','Hosting','Nginx'],
-    },
-    {
-      title: 'Personalized Card | Ejbank',
-      description: `You can personalize your bank card as you want. A very interesting program using only HTML, CSS and JavaScript, with which you can change the card name, color and model`,
-      image: 'https://raw.githubusercontent.com/erfjs/ejbank/main/img/example.png',
-      url: 'google.com',
-      blogTags: ['Devops','Hosting','Nginx'],
-    },
-    {
-      title: 'React Todo List',
-      description: `A simple to-do list app powered by React, Chakra UI, React icons. Save in Local Storage`,
-      image: 'https://raw.githubusercontent.com/erfjs/Todo-list/main/readme/example.png',
-      url: 'google.com',
-      blogTags: ['Devops','Hosting','Nginx'],
+      title: 'Why our economy is Failing the working class?',
+      description: `Government’s views of the economy could be summarised up in a few short phrases: If it moves, tax it. If it keeps moving regulate it`,
+      image: 'https://miro.medium.com/v2/resize:fit:786/format:webp/0*rlLHrSYy1YvD76CC.png',
+      url: 'https://nithinkamineni1.medium.com/why-our-economy-is-failing-the-working-class-9a672c6253c5',
+      blogTags: ['economy'],
     },
   ];
   

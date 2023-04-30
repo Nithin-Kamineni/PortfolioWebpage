@@ -3,8 +3,8 @@
 
 .skills {
   position: relative;
-  padding: calc(#{$navbarheight} + 1rem) 0 2rem 0;
-  background-color: $lightbackground;
+  background-color: $lightdarkbackground1;
+  overflow-x: hidden;
 
   .wrapper {
     max-width: 1080px;
@@ -54,10 +54,12 @@
         border-radius: 10px;
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
         transition: 0.5s all ease-in-out !important;
+        background: $lightbackground;
 
         &:hover {
           border-radius: 50px;
           background: $primarylight;
+          
           box-shadow: 0 0 6px rgba(111, 125, 252, 0.6);
         }
 

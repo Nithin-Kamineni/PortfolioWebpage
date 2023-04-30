@@ -1,5 +1,5 @@
 const Zoom = require("react-reveal/Zoom");
-import { Divider } from '@chakra-ui/react'
+import { ChakraProvider, Divider } from '@chakra-ui/react'
 import { AboutData } from "../../data/AboutData";
 import { LinksData } from "../../data/LinksData";
 import styles from "./home.module.scss";
@@ -16,32 +16,32 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { MdOutlineWork } from "react-icons/md";
+import Projects from '../Projects';
+import Blogs from '../Blogs';
+import Contact from '../Contact';
+import About from '../About';
 
 
 const welcomeText = `I Am, ${AboutData.firstName}  ${AboutData.lastName}`;
 
 const Home = () => {
   return (
-    <>
+    <ChakraProvider>
       <Container>
+      <section id="home">
         <Row>
           <div className={styles.home}>
             <Zoom cascade>
               <img src={profilePic} alt='Profile' className={styles.image} />
               <h2 className={styles.title}>{welcomeText}</h2>
             </Zoom>
-            <Zoom cascade>
+            <Zoom>
               <span className={styles.rolesGroup}>
                 <div className={styles.roles}>{'<'}</div>
                 <div className={styles.roles}>
                 <Typewriter 
                   options={{
-                    strings: [
-                      "FullStack Developer",
-                      "Backend Developer",
-                      "Software Developer",
-                      "Data Engineer",
-                    ],
+                    strings: AboutData.roles,
                     autoStart: true,
                     loop: true,
                     deleteSpeed: 50,
@@ -66,23 +66,58 @@ const Home = () => {
             </Zoom>
           </div>
         </Row>
-
-        {/* <Divider colorScheme='grey' /> */}
+        </section>
+        
         <hr className="rounded"></hr>
+        <section id="experience">
         <Row>
           <div>
             <Experience />
           </div>
         </Row>
-        {/* <Divider /> */}
+        </section>
+        <section id="projects">
+        <hr className="rounded"></hr>
+        <Row>
+          <div>
+            <Projects />
+          </div>
+        </Row>
+        </section>
+        <section id="skills">
         <hr className="rounded"></hr>
         <Row>
           <div>
             <Skills />
           </div>
         </Row>
+        </section>
+        <section id="about">
+        <hr className="rounded"></hr>
+        <Row>
+          <div>
+            <About />
+          </div>
+        </Row>
+        </section>
+        <section id="blogs">
+        <hr className="rounded"></hr>
+        <Row>
+          <div>
+            <Blogs />
+          </div>
+        </Row>
+        </section>
+        <section id="contact">
+        <hr className="rounded"></hr>
+        <Row>
+          <div>
+            <Contact />
+          </div>
+        </Row>
+        </section>
       </Container>
-    </>
+    </ChakraProvider>
   );
 };
 

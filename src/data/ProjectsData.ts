@@ -10,67 +10,43 @@ export interface ProjectsType {
 
 export const ProjectsData: ProjectsType[] = [
   {
-    title: 'Portfolio | Private Project',
-    description: `Fastest Landing page built with React, Next Js and Styled Components. modern monorepo architecture. Minimal design`,
-    image: 'https://erfjs.com/images/protfolio/my_portfolio/img-1.png',
+    title: 'UPSC Pre | Educational App with 5k+ users',
+    description: `FUPSC Pre app is designed for IAS aspirants and anyone who is preparing for exams like UPSC Prelims`,
+    image: 'https://play-lh.googleusercontent.com/BZsMcxdXk_eaGaZ9vRZnbtrRxXX9qZJviz99F90KIb0vFCE2DYLeQ1zoem5Iu2dJQQ=w2560-h1440-rw',
     GitHub: '',
-    hosted: 'https://erfjs.com',
-    tags: ['python','javaScript','react','typeScript','django']
+    hosted: 'https://play.google.com/store/apps/details?id=com.upscpre.iasprep',
+    tags: ['Elasticsearch', 'Dagger', 'RoomDB', 'Nginx', 'AWS', 'Bitbucket', 'Gunicorn', 'Django', 'Python','frontend','backend']
   },
   {
-    title: 'Animated Portfolio',
-    description: `Portfolio website built with React v18.2, Typescript,  react-router-dom v6, framer-motion, react-icons, Scss`,
-    image: 'https://raw.githubusercontent.com/erfjs/animated-portfolio/main/src/assets/example.png',
-    GitHub: 'https://github.com/erfjs/animated-portfolio',
-    hosted: 'https://animated-portfolio.erfjs.com/',
-    tags: ['python','javaScript','react','typeScript']
+    title: 'PeekNshop | e-commerce for local stores',
+    description: `Look at local store's inventory and know whether the items they are looking for are available or not.`,
+    image: 'https://user-images.githubusercontent.com/48962308/164381966-91edf596-5d0b-4957-951f-ce17009ad6c5.png',
+    GitHub: 'https://github.com/Nithin-Kamineni/peekNshop',
+    hosted: '',
+    tags: ['GO','Angular','javaScript','HTML','CSS','GORM','MySQL','backend']
   },
   {
-    title: 'Personalized Card | Ejbank',
-    description: `You can personalize your bank card as you want. A very interesting program using only HTML, CSS and JavaScript, with which you can change the card name, color and model`,
-    image: 'https://raw.githubusercontent.com/erfjs/ejbank/main/img/example.png',
-    GitHub: 'https://github.com/erfjs/ejbank',
-    hosted: `https://ejbank.erfjs.com`,
-    tags: ['python','javaScript','react','typeScript']
+    title: 'Library Managment System',
+    description: `System to manage operations of universities library`,
+    image: 'https://instanteduhelp-14bb3.kxcdn.com/wp-content/uploads/2021/09/1-2.png',
+    GitHub: 'https://github.com/Nithin-Kamineni/LibraryManagmentSystem',
+    hosted: '',
+    tags: ['Spring-boot','java','react','typeScript','HTML','frontend','backend']
   },
   {
-    title: 'React Todo List',
-    description: `A simple to-do list app powered by React, Chakra UI, React icons. Save in Local Storage`,
-    image: 'https://raw.githubusercontent.com/erfjs/Todo-list/main/readme/example.png',
-    GitHub: 'https://github.com/erfjs/Todo-list',
-    hosted: 'https://todo-app.erfjs.com',
-    tags: ['python','javaScript','react','typeScript']
+    title: 'Online Voting System | Private Project',
+    description: `Blockchain based system that is used to store the voting informating in a e-ledger`,
+    image: 'https://repository-images.githubusercontent.com/348623348/0fb955b1-5c09-4af8-ae86-5088058b086c',
+    GitHub: 'https://github.com/Nithin-Kamineni/Online-Voting-System',
+    hosted: '',
+    tags: ['javascript','ethereum','blockchain']
   },
   {
-    title: 'React weather checker',
-    description: `A weather checker app powered by React, Vite, TailWind, Swr, PropType, Dark mode`,
-    image: 'https://raw.githubusercontent.com/erfjs/weather-checker/main/readme/example.png',
-    GitHub: 'https://github.com/erfjs/weather-checker',
-    hosted: `https://weather-checker.erfjs.com`,
-    tags: ['python','javaScript','react','typeScript']
-  },
-  {
-    title: 'Foodstuffs Store',
-    description: `Store Website, built with: React v18.2,react-router-dom v6.3.0, React Icon`,
-    image: 'https://raw.githubusercontent.com/erfjs/foodstuffs_store/main/readme/example2.png',
-    GitHub: 'https://github.com/erfjs/foodstuffs_store',
-    hosted: `https://foodstuffs-store.erfjs.com`,
-    tags: ['python','javaScript','react','typeScript']
-  },
-  {
-    title: 'React weather checker',
-    description: `A weather checker app powered by React, Vite, TailWind, Swr, PropType, Dark mode`,
-    image: 'https://raw.githubusercontent.com/erfjs/weather-checker/main/readme/example.png',
-    GitHub: 'https://github.com/erfjs/weather-checker',
-    hosted: `https://weather-checker.erfjs.com`,
-    tags: ['python','javaScript','react','typeScript']
-  },
-  {
-    title: 'React weather checker',
-    description: `A weather checker app powered by React, Vite, TailWind, Swr, PropType, Dark mode`,
-    image: 'https://raw.githubusercontent.com/erfjs/weather-checker/main/readme/example.png',
-    GitHub: 'https://github.com/erfjs/weather-checker',
-    hosted: `https://weather-checker.erfjs.com`,
-    tags: ['python','javaScript','react','typeScript']
+    title: 'Portfolio | Private Project',
+    description: `Personal website to display skills and achivments`,
+    image: 'https://user-images.githubusercontent.com/45392510/235372460-89e48e6f-a621-4dc9-bcdc-111cafe7a773.png',
+    GitHub: '',
+    hosted: 'https://nithinkamineni.com',
+    tags: ['python','javaScript','react','typeScript','django','frontend']
   },
 ];

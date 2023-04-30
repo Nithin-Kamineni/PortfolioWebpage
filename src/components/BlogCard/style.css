@@ -21,8 +21,11 @@ body {
   .ProjectDisplayCard {
     width: 400px;
     height: 800px;
+    z-index: 1;
   }
-  
+  .sharingfoot{
+    display: 'inline-block !important';
+  }
 
   .image-hover-container {
     position: relative;

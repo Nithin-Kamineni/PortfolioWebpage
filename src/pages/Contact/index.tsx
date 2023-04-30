@@ -5,8 +5,14 @@ import Lottie from "react-lottie";
 import { pageVariants, pageTransition } from "../../utils/FramerAnimation";
 import styles from "./contact.module.scss";
 import lottieData from "../../assets/email.json";
+import { Button, useToast } from '@chakra-ui/react';
+import { MdEmail, MdPhone } from "react-icons/md";
 
+const ContactFormOpen = "<contact form>";
+const ContactFormClose = "</contact form>";
 const contactOpen = "<Contact />";
+const contactDataMail = "vkamineni@ufl.edu";
+const contactDataPhone = "+1 352-740-9878";
 
 const Contact = () => {
   const [contactData, setContactData] = useState({
@@ -15,6 +21,8 @@ const Contact = () => {
     message: "",
   });
 
+  const toast = useToast();
+
   const handleOnchange = (e: any) => {
     setContactData({ ...contactData, [e.target.name]: e.target.value });
   };
@@ -22,6 +30,12 @@ const Contact = () => {
   const handleOnsubmit = (e: any) => {
     e.preventDefault();
     console.log(contactData);
+    toast({
+      title: 'sent',
+      status: 'success',
+      duration: 500,
+      isClosable: true,
+    })
     setContactData({
       name: "",
       email: "",
@@ -40,6 +54,8 @@ const Contact = () => {
 
   return (
     <div className={styles.contact}>
+      <div className={styles.formTagsOpenClose}>
+      <h3 className={styles.contactFormOpen}>{ContactFormOpen}</h3>
       <motion.div
         initial='init'
         animate='anim'
@@ -50,6 +66,29 @@ const Contact = () => {
       >
         <div className={styles.form}>
           <h3 className={styles.contactOpen}>{contactOpen}</h3>
+
+          {/* <h4 className={styles.contactInfo}>{contactInfo}</h4> */}
+          <Button className={styles.contactInfo}
+            size="md"
+            height="48px"
+            width="200px"
+            variant="ghost"
+            color="#DCE2FF"
+            _hover={{ border: '2px solid #1C6FEB' }}
+            leftIcon={<MdPhone color="#1970F1" size="20px" />}>
+            {contactDataPhone}
+          </Button>
+          <Button className={styles.contactInfo}
+            size="md"
+            height="48px"
+            width="200px"
+            variant="ghost"
+            color="#DCE2FF"
+            _hover={{ border: '2px solid #1C6FEB' }}
+            leftIcon={<MdEmail color="#1970F1" size="20px" />}>
+            {contactDataMail}
+          </Button>
+
           <form onSubmit={handleOnsubmit}>
             <input
               type='text'
@@ -89,6 +128,8 @@ const Contact = () => {
           />
         </div>
       </motion.div>
+      <h3 className={styles.contactFormClose}>{ContactFormClose}</h3>
+      </div>
     </div>
   );
 };
