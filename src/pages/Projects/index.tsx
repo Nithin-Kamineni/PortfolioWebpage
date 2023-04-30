@@ -36,11 +36,11 @@ const Projects = () => {
 
   const All = () => {
     handleButtonClick('All');
-    setfilteredData(ProjectsData); 
+    setfilteredData(ProjectsData);
   }
   const Angular = () => {
     handleButtonClick('Angular');
-    setfilteredData(ProjectsData.filter((item) => item.tags.includes('angular')));
+    setfilteredData(ProjectsData.filter((item) => item.tags.includes('Angular')));
   }
   const React = () => {
     handleButtonClick('React');
@@ -56,7 +56,7 @@ const Projects = () => {
   }
   const GoLang = () => {
     handleButtonClick('GoLang');
-    setfilteredData(ProjectsData.filter((item) => item.tags.includes('golang')));
+    setfilteredData(ProjectsData.filter((item) => item.tags.includes('GO')));
   }
   const Spring = () => {
     handleButtonClick('Spring');
@@ -118,34 +118,36 @@ const Projects = () => {
             </Center>
             <Center height={10}></Center>
           </ChakraProvider>
-          <div className={styles.projects_content}>
-            {filteredData.map((item, index) =>
-              index % 2 === 0 ? (
-                <Flip top key={item.title}>
-                  <ProjectCard
-                    key={item.title}
-                    title={item.title}
-                    description={item.description}
-                    image={item.image}
-                    GitHub={item.GitHub}
-                    hosted={item.hosted}
-                    tags={item.tags}
-                  />
-                </Flip>
-              ) : (
-                <Flip bottom key={item.title}>
-                  <ProjectCard
-                    key={item.title}
-                    title={item.title}
-                    description={item.description}
-                    image={item.image}
-                    GitHub={item.GitHub}
-                    hosted={item.hosted}
-                    tags={item.tags}
-                  />
-                </Flip>
-              )
-            )}
+          <div className={styles.projectscontent}>
+            {filteredData.map((item, index) => (
+              <div className={styles.projects_item} key={index}>
+                {index % 2 === 0 ? (
+                  <Flip top key={item.title}>
+                    <ProjectCard
+                      key={item.title}
+                      title={item.title}
+                      description={item.description}
+                      image={item.image}
+                      GitHub={item.GitHub}
+                      hosted={item.hosted}
+                      tags={item.tags}
+                    />
+                  </Flip>
+                ) : (
+                  <Flip bottom key={item.title}>
+                    <ProjectCard
+                      key={item.title}
+                      title={item.title}
+                      description={item.description}
+                      image={item.image}
+                      GitHub={item.GitHub}
+                      hosted={item.hosted}
+                      tags={item.tags}
+                    />
+                  </Flip>
+                )}
+              </div>
+            ))}
           </div>
 
           <h3 className={styles.projectsClose}>{projectsClose}</h3>

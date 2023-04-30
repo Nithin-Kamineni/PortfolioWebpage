@@ -13,6 +13,7 @@
     margin: 20px auto;
     padding: 0 20px;
     position: relative;
+   
 
     .projectsOpen {
       font-size: 2rem;
@@ -48,12 +49,18 @@
       letter-spacing: 0.5px;
     }
 
-    .projects_content {
+    .projectscontent {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       gap: 3.6rem;
+      align-content: stretch;
+
+      .projects_item {
+        display: flex;
+        align-items: stretch;
+      }
     }
   }
 }
