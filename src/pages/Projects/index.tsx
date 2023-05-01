@@ -1,4 +1,5 @@
-const Flip = require("react-reveal/Flip");
+// const Flip = require("react-reveal/Flip");
+const Flip = require('../../modules/react-reveal/Flip');
 import { motion } from "framer-motion";
 import { useState } from 'react';
 import { ProjectCard } from "../../components/ProjectCard/ProjectCard";

@@ -5,10 +5,7 @@ import { pageVariants, pageTransition } from "../../utils/FramerAnimation";
 import { ExperienceData } from "../../data/ExperienceData";
 import styles from "./experience.module.scss";
 
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+
 import "react-vertical-timeline-component/style.min.css";
 import {MdOutlineWork} from "react-icons/md";
 

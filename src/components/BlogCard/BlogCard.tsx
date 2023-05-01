@@ -22,7 +22,6 @@ import {
   Center,
   useToast
 } from '@chakra-ui/react'
-import { Portal } from "react-portal";
 import { Button, ButtonGroup, IconButton } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import { Divider, HStack, Heading, Stack, Text } from "@chakra-ui/layout";
@@ -46,8 +45,8 @@ import {
 } from '@chakra-ui/react'
 import { blogHashMap } from "../../data/colorScheme";
 import { SiGmail, SiStackoverflow } from "react-icons/si";
-import { Link } from "react-router-dom";
-import { AiOutlineLink } from "react-icons/ai";
+// import { Link } from "react-router-dom";
+// import { AiOutlineLink } from "react-icons/ai";
 
 const BlogCard: FC<BlogCardProps> = (props) => {
   const [hovered, setHovered] = useState(false);

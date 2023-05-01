@@ -1,4 +1,5 @@
-const Zoom = require("react-reveal/Zoom");
+// const Zoom = require("react-reveal/Zoom");
+const Zoom = require('../../modules/react-reveal/Zoom');
 import { ChakraProvider, Divider } from '@chakra-ui/react'
 import { AboutData } from "../../data/AboutData";
 import { LinksData } from "../../data/LinksData";
@@ -10,10 +11,7 @@ import Experience from "../Experience";
 import Skills from "../Skills";
 import { Row, Col, Container } from "react-bootstrap";
 import Typewriter from "typewriter-effect";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+
 import "react-vertical-timeline-component/style.min.css";
 import { MdOutlineWork } from "react-icons/md";
 import Projects from '../Projects';
