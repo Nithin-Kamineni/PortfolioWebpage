@@ -1,5 +1,5 @@
 // const Flip = require("react-reveal/Flip");
-const Flip = require('../../modules/react-reveal/Flio');
+const Flip = require('../../modules/react-reveal/Flip');
 import { motion } from "framer-motion";
 
 import { BlogCard } from "../../components/BlogCard/BlogCard";
