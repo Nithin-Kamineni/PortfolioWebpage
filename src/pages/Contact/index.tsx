@@ -1,35 +1,59 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-// import Lottie from "react-lottie";
-import Lottie from 'lottie-react'
+import Lottie from "react-lottie";
+// import Lottie from 'react-lottie-player'
 import { pageVariants, pageTransition } from "../../utils/FramerAnimation";
 import styles from "./contact.module.scss";
 import lottieData from "../../assets/email.json";
 import { Button, useToast } from '@chakra-ui/react';
 import { MdEmail, MdPhone } from "react-icons/md";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { ContactData } from "../../data/ContactData";
 
 const ContactFormOpen = "<contact form>";
 const ContactFormClose = "</contact form>";
 const contactOpen = "<Contact />";
-const contactDataMail = "vkamineni@ufl.edu";
-const contactDataPhone = "+1 352-740-9878";
+const contactDataMail = ContactData.mail1;
+const contactDataPhone = ContactData.phoneNumber;
 
+const defaultOptions = {
+  loop: false,
+  autoplay: true,
+  animationData: lottieData,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice",
+  },
+};
 const Contact = () => {
   const [contactData, setContactData] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     message: "",
   });
-
-  const toast = useToast();
-
   const handleOnchange = (e: any) => {
     setContactData({ ...contactData, [e.target.name]: e.target.value });
   };
 
+  // const formInputUser = useRef();
+  const formInputUser = useRef<HTMLFormElement>(document.createElement("form"));
+
+  const toast = useToast();
+
+  
+
   const handleOnsubmit = (e: any) => {
     e.preventDefault();
-    console.log(contactData);
+    
+    emailjs.sendForm(ContactData.servideId, ContactData.templatedId, formInputUser.current, ContactData.publicKey)
+      .then((result) => {
+          console.log(result.text);
+          console.log(contactData);
+          console.log('message sent');
+      }, (error) => {
+          console.log(error.text);
+      });
+    
     toast({
       title: 'sent',
       status: 'success',
@@ -37,8 +61,8 @@ const Contact = () => {
       isClosable: true,
     })
     setContactData({
-      name: "",
-      email: "",
+      user_name: "",
+      user_email: "",
       message: "",
     });
   };
@@ -80,21 +104,21 @@ const Contact = () => {
               {contactDataMail}
             </Button>
 
-            <form onSubmit={handleOnsubmit}>
+            <form ref={formInputUser} onSubmit={handleOnsubmit}>
               <input
                 type='text'
-                name='name'
+                name='user_name'
                 placeholder='Name'
                 required
-                value={contactData.name}
+                value={contactData.user_name}
                 onChange={handleOnchange}
               />
               <input
                 type='email'
-                name='email'
+                name='user_email'
                 placeholder='Email'
                 required
-                value={contactData.email}
+                value={contactData.user_email}
                 onChange={handleOnchange}
               />
               <textarea
@@ -106,18 +130,18 @@ const Contact = () => {
                 value={contactData.message}
                 onChange={handleOnchange}
               ></textarea>
-              <button type='submit'>Send</button>
+              <button type='submit' value='Send'>Send</button>
             </form>
           </div>
           <div className={styles.lottie}>
-            {/* <Lottie
+            <Lottie
               options={defaultOptions}
               height='100%'
               width='100%'
               isStopped={false}
               isPaused={false}
-            /> */}
-            <Lottie animationData={lottieData} height={'100%'} width={'100%'} autoplay={false} loop={true}/>
+            />
+            {/* <Lottie animationData={lottieData} height={'100%'} width={'100%'} autoplay={false} loop={true}/> */}
           </div>
         </motion.div>
         <h3 className={styles.contactFormClose}>{ContactFormClose}</h3>
