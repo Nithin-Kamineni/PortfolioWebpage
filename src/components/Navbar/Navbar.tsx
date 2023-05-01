@@ -61,8 +61,8 @@ const Navbar = () => {
               duration={500}>
               {link.title}
             </reactScroll.Link> :
-              <span className={styles.resumelink}>
-                <a href={link.linkTo} onClick={() => window.location.assign('https://example.com')}>
+              <span className={styles.resumelink} key={link.id}>
+                <a href={link.linkTo} onClick={() => window.location.assign(link.linkTo)}>
                   Resume
                 </a>
               </span>
@@ -101,10 +101,11 @@ const Navbar = () => {
         }
       >
         {LinksData.map((link) => (
+          link.id != 'resume' ?
           <reactScroll.Link
             activeClass={styles.active}
             to={link.id}
-            key={link.title}
+            key={link.id}
             className={styles.mobileLinks}
             onClick={handleMobileMenuToggle}
             spy={true}
@@ -112,7 +113,12 @@ const Navbar = () => {
             offset={-100}
             duration={500}>
             {link.title}
-          </reactScroll.Link>
+          </reactScroll.Link> :
+          <span className={styles.resumelink } key={link.id}>
+                <a href={link.linkTo} onClick={() => window.location.assign('https://example.com')}>
+                  Resume
+                </a>
+          </span>
         ))}
       </div>
     </>
