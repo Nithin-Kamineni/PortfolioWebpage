@@ -37,7 +37,7 @@ const Feature = ({ text, icon, iconBg }: FeatureProps) => {
   return (
     <Stack direction={'row'} align={'center'}>
       <Flex
-        w={10}
+        w={20}
         h={10}
         align={'center'}
         justify={'center'}
@@ -92,7 +92,7 @@ export default function About() {
               }
               {AboutData.aboutFeature2 &&
               <Feature
-                icon={<Icon as={GiTeamUpgrade} color={'green.500'} w={5} h={5} />}
+                icon={<Icon as={GiTeamUpgrade} color={'green.500'} w={4} h={5} />}
                 iconBg={useColorModeValue('green.100', 'green.900')}
                 text={AboutData.aboutFeature2}
               />}

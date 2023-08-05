@@ -132,7 +132,7 @@ const BlogCard: FC<BlogCardProps> = (props) => {
               <Modal isOpen={isOpen} onClose={onClose} size="sm">
                 <ModalOverlay />
                 <ModalContent>
-                  <ModalHeader>Modal Title</ModalHeader>
+                  <ModalHeader>Share the Blog</ModalHeader>
                   <ModalCloseButton />
                   <ModalBody>
                     {/* <Lorem count={2} /> */}

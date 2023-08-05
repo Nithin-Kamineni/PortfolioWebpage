@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
+// import Lottie from "../../modules/react-lottie";
+import { useLottie } from "lottie-react";
 // import Lottie from 'react-lottie-player'
 import { pageVariants, pageTransition } from "../../utils/FramerAnimation";
 import styles from "./contact.module.scss";
-import lottieData from "../../assets/email.json";
-import { Button, useToast } from '@chakra-ui/react';
+import lottieData from "../../assets/email.json";            //lottie json data
+import { Button, useToast } from "@chakra-ui/react";
 import { MdEmail, MdPhone } from "react-icons/md";
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
@@ -31,6 +33,11 @@ const Contact = () => {
     },
   };
 
+  const options = {
+    animationData: lottieData,
+    loop: !sentMail
+  };
+
   const [contactData, setContactData] = useState({
     user_name: "",
     user_email: "",
@@ -52,11 +59,11 @@ const Contact = () => {
     e.preventDefault();
     
     emailjs.sendForm(ContactData.servideId, ContactData.templatedId, formInputUser.current, ContactData.publicKey)
-      .then((result) => {
+      .then((result: any) => {
           console.log(result.text);
           console.log(contactData);
           console.log('message sent');
-      }, (error) => {
+      }, (error: any) => {
           console.log(error.text);
       });
     
@@ -74,7 +81,7 @@ const Contact = () => {
 
     setSentMail(true);
   };
-
+  const { View } = useLottie(options);
   if(!sentMail){
     return (
       <div className={styles.contact}>
@@ -143,13 +150,14 @@ const Contact = () => {
               </form>
             </div>
             <div className={styles.lottie}>
-              <Lottie
+              {/* <Lottie
                 options={defaultOptions}
                 height='100%'
                 width='100%'
                 isStopped={false}
                 isPaused={false}
-              />
+              /> */}
+              {View}
               {/* <Lottie animationData={lottieData} height={'100%'} width={'100%'} autoplay={false} loop={true}/> */}
             </div>
           </motion.div>
@@ -172,13 +180,14 @@ const Contact = () => {
           className={styles.wrapper}
         >
           <div className={styles.lottie}>
-            <Lottie
+            {/* <Lottie
               options={defaultOptions}
               height='100%'
               width='100%'
               isStopped={false} // Keep the animation running
               isPaused={false} // Keep the animation running
-            />
+            /> */}
+            {View}
           </div>
         </motion.div>
         <h3 className={styles.contactFormClose}>{ContactFormClose}</h3>

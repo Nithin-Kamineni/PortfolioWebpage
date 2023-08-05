@@ -44,7 +44,18 @@ const Navbar = () => {
   return (
     <>
       <div className={styles.navbar}>
-        <h2 className={styles.logo}>V.N.K</h2>
+      <reactScroll.Link
+              to={'home'}
+              // key={'homelog'}
+              // className={styles.link}
+              className={`${styles.link} ${activeSection === 'home' ? styles.active : ""
+                }`}
+              spy={true}
+              smooth={true}
+              offset={-98}
+              duration={500}>
+          <h2 className={styles.logo}>V.N.K</h2>
+        </reactScroll.Link>
         <div className={styles.desktopitems}>
           {LinksData.map((link) => (
             link.id != 'resume' ? <reactScroll.Link

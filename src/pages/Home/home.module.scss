@@ -154,6 +154,12 @@
   }
 }
 
+.gitchart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .alternate{
   background-color: $lightdarkbackground2;
   // background-color: #9ea9ab;

@@ -11,6 +11,8 @@ import { Text } from "@chakra-ui/layout";
 import { FaAngular, FaJava, FaNodeJs, FaPython, FaReact } from 'react-icons/fa'
 import { TbBrandGolang } from 'react-icons/tb';
 import { FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaRocket } from "react-icons/fa";
+import GithubChart from "../../components/GithubContributionsChart/githubContributionChart";
 import {
   ChakraProvider,
   Center,
@@ -18,8 +20,13 @@ import {
   Stack,
   Button,
   Divider,
+  Badge,
+  Tag,
   useBreakpointValue,
+  TagLabel,
+  TagLeftIcon,
 } from '@chakra-ui/react';
+import GitHubCalendar from 'react-github-calendar';
 const projectsOpen = "<projects>";
 const projectsClose = "</projects>";
 // let filteredData: ProjectsType[];
@@ -41,35 +48,52 @@ const Projects = () => {
   }
   const Angular = () => {
     handleButtonClick('Angular');
-    setfilteredData(ProjectsData.filter((item) => item.tags.includes('Angular')));
+    setfilteredData(ProjectsData.filter((item) => item.tags.some(tag => tag.toLowerCase() === 'angular')));
   }
+  
   const React = () => {
     handleButtonClick('React');
-    setfilteredData(ProjectsData.filter((item) => item.tags.includes('react')));
+    setfilteredData(ProjectsData.filter((item) => item.tags.some(tag => tag.toLowerCase() === 'react')));
   }
+  
   const Django = () => {
     handleButtonClick('Django');
-    setfilteredData(ProjectsData.filter((item) => item.tags.includes('django')));
+    setfilteredData(ProjectsData.filter((item) => item.tags.some(tag => tag.toLowerCase() === 'django')));
   }
+  
   const Nodejs = () => {
     handleButtonClick('Nodejs');
-    setfilteredData(ProjectsData.filter((item) => item.tags.includes('nodejs')));
+    setfilteredData(ProjectsData.filter((item) => item.tags.some(tag => tag.toLowerCase() === 'nodejs')));
   }
+  
   const GoLang = () => {
     handleButtonClick('GoLang');
-    setfilteredData(ProjectsData.filter((item) => item.tags.includes('GO')));
+    setfilteredData(ProjectsData.filter((item) => item.tags.some(tag => tag.toLowerCase() === 'go')));
   }
+  
+  const Dotnet = () => {
+    handleButtonClick('dotnet');
+    setfilteredData(ProjectsData.filter((item) => item.tags.some(tag => tag.toLowerCase() === 'c#')));
+  }
+
   const Spring = () => {
     handleButtonClick('Spring');
-    setfilteredData(ProjectsData.filter((item) => item.tags.includes('spring-boot')));
+    setfilteredData(ProjectsData.filter((item) => item.tags.some(tag => tag.toLowerCase() === 'spring-boot')));
   }
+
+  const Docker = () => {
+    handleButtonClick('Docker');
+    setfilteredData(ProjectsData.filter((item) => item.tags.some(tag => tag.toLowerCase() === 'docker')));
+  }
+  
   const Backend = () => {
     handleButtonClick('Backend');
-    setfilteredData(ProjectsData.filter((item) => item.tags.includes('backend')));
+    setfilteredData(ProjectsData.filter((item) => item.tags.some(tag => tag.toLowerCase() === 'backend')));
   }
+  
   const Frontend = () => {
     handleButtonClick('Frontend');
-    setfilteredData(ProjectsData.filter((item) => item.tags.includes('frontend')));
+    setfilteredData(ProjectsData.filter((item) => item.tags.some(tag => tag.toLowerCase() === 'frontend')));
   }
 
   return (
@@ -96,6 +120,12 @@ const Projects = () => {
                   <Button colorScheme={selectedButton === 'Spring' ? 'blue' : 'gray'} leftIcon={<FaJava />} size='xs' onClick={Spring}>
                     Spring-Boot
                   </Button>
+                  <Button colorScheme={selectedButton === 'dotnet' ? 'blue' : 'gray'} leftIcon={<FaJava />} size='xs' onClick={Dotnet}>
+                    ASP .Net
+                  </Button>
+                  <Button colorScheme={selectedButton === 'Docker' ? 'blue' : 'gray'} leftIcon={<FaJava />} size='xs' onClick={Docker}>
+                    Docker
+                  </Button>
                   <Button colorScheme={selectedButton === 'GoLang' ? 'blue' : 'gray'} leftIcon={<TbBrandGolang />} size='xs' onClick={GoLang}>
                     GO
                   </Button>
@@ -119,38 +149,52 @@ const Projects = () => {
             </Center>
             <Center height={10}></Center>
           </ChakraProvider>
-          <div className={styles.projectscontent}>
-            {filteredData.map((item, index) => (
-              <div className={styles.projects_item} key={index}>
-                {index % 2 === 0 ? (
-                  <Flip top key={item.title}>
-                    <ProjectCard
-                      key={item.title}
-                      title={item.title}
-                      description={item.description}
-                      image={item.image}
-                      GitHub={item.GitHub}
-                      hosted={item.hosted}
-                      tags={item.tags}
-                    />
-                  </Flip>
-                ) : (
-                  <Flip bottom key={item.title}>
-                    <ProjectCard
-                      key={item.title}
-                      title={item.title}
-                      description={item.description}
-                      image={item.image}
-                      GitHub={item.GitHub}
-                      hosted={item.hosted}
-                      tags={item.tags}
-                    />
-                  </Flip>
-                )}
-              </div>
-            ))}
-          </div>
+          
+            <div className={styles.projectscontent}>
 
+              {filteredData.length==0 && <>No projects with this technology</>}
+
+              {filteredData.map((item, index) => (
+                <div className={styles.projects_item} key={index}>
+                  {index % 2 === 0 ? (
+                    <Flip top key={item.title}>
+                      <ProjectCard
+                        key={item.title}
+                        title={item.title}
+                        description={item.description}
+                        image={item.image}
+                        GitHub={item.GitHub}
+                        hosted={item.hosted}
+                        tags={item.tags}
+                        points={item.points}
+                        publition={item.publition}
+                      />
+                    </Flip>
+                  ) : (
+                    <Flip bottom key={item.title}>
+                      <ProjectCard
+                        key={item.title}
+                        title={item.title}
+                        description={item.description}
+                        image={item.image}
+                        GitHub={item.GitHub}
+                        hosted={item.hosted}
+                        tags={item.tags}
+                        points={item.points}
+                        publition={item.publition}
+                      />
+                    </Flip>
+                  )}
+                </div>
+              ))}
+            </div>
+            {/* , paddingBottom:'10px' */}
+            <div className={styles.githubContainerOverlay}>
+              
+              <div className={styles.githubContainer}>
+                <GithubChart />
+              </div>
+          </div>
           <h3 className={styles.projectsClose}>{projectsClose}</h3>
         </div>
       </motion.div>

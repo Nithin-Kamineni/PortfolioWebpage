@@ -24,5 +24,12 @@ interface BlogType {
       url: 'https://nithinkamineni1.medium.com/why-our-economy-is-failing-the-working-class-9a672c6253c5',
       blogTags: ['economy'],
     },
+    {
+      title: 'Read this before you dockerizing your application',
+      description: `Government’s views of the economy could be summarised up in a few short phrases: If it moves, tax it. If it keeps moving regulate it`,
+      image: 'https://blog.sixeyed.com/content/images/2017/03/docker-windows-apps.png',
+      url: 'https://nithinkamineni1.medium.com/read-this-before-you-dockerizing-your-application-5a738fd2030',
+      blogTags: ['docker'],
+    },
   ];
   

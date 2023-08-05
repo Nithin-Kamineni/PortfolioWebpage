@@ -47,7 +47,8 @@
 
       a {
         font-size: 3.5rem;
-        display: flex;
+        // display: flex;
+        text-align: center;
         justify-content: center;
         align-items: center;
         padding: 15px;
@@ -60,7 +61,12 @@
           border-radius: 50px;
           background: $primarylight;
           
-          box-shadow: 0 0 6px rgba(111, 125, 252, 0.6);
+          box-shadow: 0 0 6px rgba(71, 74, 92, 0.6);
+        }
+
+        .icon_frame {
+          // font-size: 2rem;
+          margin-bottom: 0.5rem; // Add margin between icon and name
         }
 
         & svg {

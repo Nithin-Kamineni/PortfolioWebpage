@@ -1,6 +1,6 @@
 // const Zoom = require("react-reveal/Zoom");
 const Zoom = require('../../modules/react-reveal/Zoom');
-import { ChakraProvider, Divider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import { AboutData } from "../../data/AboutData";
 import { LinksData } from "../../data/LinksData";
 import styles from "./home.module.scss";
@@ -18,13 +18,14 @@ import Projects from '../Projects';
 import Blogs from '../Blogs';
 import Contact from '../Contact';
 import About from '../About';
+// import GitHubCalendarComponent from '../../components/GithubContributionsChart/githubContributionChart';
 
 
 const welcomeText = `I Am, ${AboutData.firstName}  ${AboutData.lastName}`;
 
 const Home = () => {
   return (
-    <ChakraProvider>
+    <ChakraProvider cssVarsRoot={undefined}>
       <Container>
       <section id="home">
         <Row>
@@ -49,6 +50,7 @@ const Home = () => {
               </span>
               <h3 className={styles.about}>{AboutData.about1}</h3>
               <h3 className={styles.about_next}>{AboutData.about2}</h3>
+              
               <div className={styles.links}>
                 {LinksData.map((item) => (
                   <a
@@ -64,6 +66,7 @@ const Home = () => {
             </Zoom>
           </div>
         </Row>
+        
         </section>
         
         <hr className="rounded"></hr>

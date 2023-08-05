@@ -6,8 +6,18 @@ interface ExperienceDataType {
 
 export const ExperienceData: ExperienceDataType[] = [
   {
+    title: 'Graduate Research Assistant',
+    date: ' May 2023 - Present',
+    details: [
+      'Developed a web data dashboard for cancer nano-medicine research data for PBPK models, resulting in a 10% increase in the conversion rate for the research study site', 
+      'Orchestrated the materialization of an interactive web graphical interface, which enabled research teams to utilize an interactive simulative panel, significantly elevating the predictability of the PBPK model by 12.77%', 
+      'Pioneered the creation of an intuitive and user-friendly data dashboard for the PBPK model, promoting seamless collaboration among research teams and driving successful study outcomes', 
+      'Deployed Web App in AWS using CI/CD pipeline leveraging Jenkins using Nginx for routing with Dockerized application',
+    ],
+  },
+  {
     title: 'Graduate Student Assistant | trafficml.com',
-    date: ' Jan 2023 _ April 2023',
+    date: ' Jan 2023 - May 2023',
     details: [
       'Developed and hosted web applications using NodeJs, PostgresSQL, AWS SDK, reactJS, Javascript, CI/CD, Docker, Kubernetes', 
       'Developed a real-time traffic monitoring system, displaying sensor data from thousands of intersections in multiple cities like Gainesville, Orlando, etc. and displaying them from AWS S3 buckets', 
@@ -25,7 +35,7 @@ export const ExperienceData: ExperienceDataType[] = [
     ],
   },
   {
-    title: 'Software Devloper Intern | Fintroops Fintech Solutions',
+    title: 'Jr. Web Devloper | Fintroops Fintech Solutions',
     date: 'Aug 2021 - Oct 2021',
     details: [
       'Developed web applications using Node.js, Express, MS SQL server, Postman',

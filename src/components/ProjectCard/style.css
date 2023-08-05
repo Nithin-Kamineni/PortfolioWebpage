@@ -61,7 +61,12 @@ body {
     cursor: pointer;
     display: block;
   }
-  
+
+  .CardFooter {
+    display: flex;
+    justify-content: left;
+  }
+ 
   /* .image-hover-container:hover .icon-button {
     display: block;
   } */
