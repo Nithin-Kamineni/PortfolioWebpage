@@ -23,6 +23,8 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import FlashCards from "./pages/FlashCards/flashcards";
 import TermsEditDashboard from "./pages/TermsEdit";
+import DND from "./pages/DND";
+import { ParamProvider } from "./context";
 
 const ProtectedRoutes: React.FC = () => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -36,37 +38,44 @@ const App: React.FC = () => {
       <MainNavbar />
       <ChakraProvider>
         <Provider store={store}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/experience" element={<Experience />} />
+          <ParamProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/experience" element={<Experience />} />
 
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* <Route path='/resume' element={<Resume />} /> */}
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/about" element={<About />} />
-            {/* <Route path="/leetcode" element={<LC_Dashboard />} /> */}
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+              {/* <Route path='/resume' element={<Resume />} /> */}
+              <Route path="/blogs" element={<Blogs />} />
+              <Route path="/about" element={<About />} />
+              {/* <Route path="/leetcode" element={<LC_Dashboard />} /> */}
 
-            <Route element={<ProtectedRoutes />}>
-              <Route path="/leetcode" element={<LC_Dashboard />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/forecast" element={<Dashboard2 />} />
-              <Route path="/flashcards" element={<FlashCardsDashboard />} />
-              <Route path="/flashcards/edit" element={<TermsEditDashboard />} />
-              <Route path="/courses-progress" element={<Dashboard2 />} />
-              <Route path="/research-roadmap" element={<Dashboard2 />} />
-              <Route path="/leetcode/edit" element={<LeetcodeDashboard />} />
-              <Route path="/connections" element={<ConnectionsDashboard />} />
-              <Route path="/calendar" element={<GoogleCalendarDashboard />} />
-              <Route path="/reading-list" element={<Dashboard2 />} />
-              <Route path="/tasks" element={<TasksDashboard />} />
-              <Route
-                path="/flashcards/:flashcardsStackId"
-                element={<FlashCards />}
-              />
-            </Route>
-          </Routes>
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/leetcode" element={<LC_Dashboard />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/forecast" element={<Dashboard2 />} />
+                <Route path="/flashcards" element={<FlashCardsDashboard />} />
+                <Route
+                  path="/flashcards/edit"
+                  element={<TermsEditDashboard />}
+                />
+                <Route path="/courses-progress" element={<Dashboard2 />} />
+                <Route path="/research-roadmap" element={<Dashboard2 />} />
+                <Route path="/leetcode/edit" element={<LeetcodeDashboard />} />
+                <Route path="/connections" element={<ConnectionsDashboard />} />
+                <Route path="/calendar" element={<GoogleCalendarDashboard />} />
+                <Route path="/reading-list" element={<Dashboard2 />} />
+                <Route path="/tasks" element={<TasksDashboard />} />
+                <Route path="/dnd/*" element={<DND />} />
+
+                <Route
+                  path="/flashcards/:flashcardsStackId"
+                  element={<FlashCards />}
+                />
+              </Route>
+            </Routes>
+          </ParamProvider>
         </Provider>
       </ChakraProvider>
       {/* </AuthProvider> */}

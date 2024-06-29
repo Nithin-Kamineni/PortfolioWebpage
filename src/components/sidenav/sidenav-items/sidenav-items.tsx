@@ -7,6 +7,8 @@ import {
   Link,
   Tooltip,
   IconButton,
+  Box,
+  Portal,
 } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 import { NavLink } from "react-router-dom";
@@ -98,70 +100,74 @@ export function SidenavItems({ navItems, mode = "semi" }: SidenavItemsProps) {
                 to={item.to}
               />
             </PopoverTrigger>
-            <PopoverContent width={"120px"} zIndex={1000}>
-              {/* <PopoverHeader fontWeight="semibold">
+            <Portal>
+              <Box zIndex="tooltip" w="full" h="full" position={"relative"}>
+                <PopoverContent width={"120px"}>
+                  {/* <PopoverHeader fontWeight="semibold">
                 Popover placement
               </PopoverHeader> */}
-              <PopoverArrow />
-              <PopoverCloseButton />
-              <PopoverBody>
-                <HStack gap={4}>
-                  <Center w="40px" h="40px" color="white">
-                    <IconButton
-                      key={index}
-                      as={NavLink}
-                      _focus={{ bg: "gray.100" }}
-                      _activeLink={{
-                        boxShadow: "md",
-                        bg:
-                          "/flashcards/" === location.pathname ||
-                          "/flashcards" === location.pathname ||
-                          "/leetcode" === location.pathname ||
-                          "/leetcode/" === location.pathname
-                            ? "orange.500"
-                            : "grey",
-                        color: "white",
-                      }}
-                      bg={
-                        item.label.toLocaleLowerCase() === location.pathname
-                          ? "orange.500"
-                          : "grey"
-                      }
-                      // bg={"grey"}
-                      color={"white"}
-                      aria-label={item.label}
-                      borderRadius="xl"
-                      icon={<Icon />}
-                      to={item.to}
-                    />
-                  </Center>
-                  <Center w="40px" h="40px" color="white">
-                    <IconButton
-                      key={index}
-                      as={NavLink}
-                      _focus={{ bg: "gray.100" }}
-                      _activeLink={{
-                        boxShadow: "md",
-                        bg:
-                          "/flashcards/edit/" === location.pathname ||
-                          "/flashcards/edit" === location.pathname ||
-                          "/leetcode/edit" === location.pathname ||
-                          "/leetcode/edit/" === location.pathname
-                            ? "orange.500"
-                            : "grey",
-                        color: "white",
-                      }}
-                      bg={"grey"}
-                      color={"white"}
-                      aria-label={item.label}
-                      borderRadius="xl"
-                      icon={<Icon />}
-                      to={item.to + "/edit"}
-                    />
-                  </Center>
-                </HStack>
-              </PopoverBody>
-            </PopoverContent>
+                  <PopoverArrow />
+                  <PopoverCloseButton />
+                  <PopoverBody>
+                    <HStack gap={4}>
+                      <Center w="40px" h="40px" color="white">
+                        <IconButton
+                          key={index}
+                          as={NavLink}
+                          _focus={{ bg: "gray.100" }}
+                          _activeLink={{
+                            boxShadow: "md",
+                            bg:
+                              "/flashcards/" === location.pathname ||
+                              "/flashcards" === location.pathname ||
+                              "/leetcode" === location.pathname ||
+                              "/leetcode/" === location.pathname
+                                ? "orange.500"
+                                : "grey",
+                            color: "white",
+                          }}
+                          bg={
+                            item.label.toLocaleLowerCase() === location.pathname
+                              ? "orange.500"
+                              : "grey"
+                          }
+                          // bg={"grey"}
+                          color={"white"}
+                          aria-label={item.label}
+                          borderRadius="xl"
+                          icon={<Icon />}
+                          to={item.to}
+                        />
+                      </Center>
+                      <Center w="40px" h="40px" color="white">
+                        <IconButton
+                          key={index}
+                          as={NavLink}
+                          _focus={{ bg: "gray.100" }}
+                          _activeLink={{
+                            boxShadow: "md",
+                            bg:
+                              "/flashcards/edit/" === location.pathname ||
+                              "/flashcards/edit" === location.pathname ||
+                              "/leetcode/edit" === location.pathname ||
+                              "/leetcode/edit/" === location.pathname
+                                ? "orange.500"
+                                : "grey",
+                            color: "white",
+                          }}
+                          bg={"grey"}
+                          color={"white"}
+                          aria-label={item.label}
+                          borderRadius="xl"
+                          icon={<Icon />}
+                          to={item.to + "/edit"}
+                        />
+                      </Center>
+                    </HStack>
+                  </PopoverBody>
+                </PopoverContent>
+              </Box>
+            </Portal>
           </Popover>
         </>
       ) : (

@@ -1677,10 +1677,481 @@ var DnDPetStatsSheet = /*#__PURE__*/ (function (_React$Component) {
 
     var character = this.getCharacter();
 
+    // return React.createElement(
+    //   "div",
+    //   {
+    //     className: "d-and-d-character-sheet container-xl mt-5 mb-5",
+    //   },
+    //   React.createElement(
+    //     "div",
+    //     null,
+    //     React.createElement(
+    //       "div",
+    //       {
+    //         className: "row mb-4",
+    //       },
+    //       React.createElement(
+    //         "div",
+    //         {
+    //           className: "col-md-3 pr-2 pl-2",
+    //         },
+    //         React.createElement(
+    //           "div",
+    //           {
+    //             className: "d-and-d-page-title",
+    //           },
+    //           "D&D"
+    //         ),
+    //         React.createElement(
+    //           "div",
+    //           {
+    //             className: "d-and-d-attribute-collection char-name pr-3 pl-3",
+    //           },
+    //           React.createElement("input", {
+    //             type: "text",
+    //             value: character.name ? character.name : "",
+    //             onChange: function onChange(e) {
+    //               return _this2.updateCharacter("name", e.target.value);
+    //             },
+    //           })
+    //         ),
+    //         React.createElement(
+    //           "label",
+    //           {
+    //             style: {
+    //               width: "100%",
+    //               textAlign: "right",
+    //               textTransform: "uppercase",
+    //               fontSize: "11px",
+    //             },
+    //           },
+    //           "Pet Name"
+    //         )
+    //       ),
+    //       React.createElement(
+    //         "div",
+    //         {
+    //           className: "col-md-2 pr-2 pl-2",
+    //         },
+    //         React.createElement(
+    //           "div",
+    //           {
+    //             className: "d-and-d-attribute-collection pr-3 pl-3",
+    //           },
+    //           React.createElement(
+    //             "div",
+    //             {
+    //               className: "row pl-3 pr-3",
+    //             },
+    //             React.createElement(
+    //               "div",
+    //               {
+    //                 className: "col-md-12 col-6 pl-0 pr-0",
+    //               },
+    //               React.createElement("input", {
+    //                 type: "text",
+    //                 value: character.classLevel ? character.classLevel : "",
+    //                 onChange: function onChange(e) {
+    //                   return _this2.updateCharacter(
+    //                     "classLevel",
+    //                     e.target.value
+    //                   );
+    //                 },
+    //               }),
+    //               React.createElement("label", null, "Class & Level")
+    //             )
+    //           ),
+    //           React.createElement(
+    //             "div",
+    //             {
+    //               className: "row pl-3 pr-3",
+    //             },
+    //             React.createElement(
+    //               "div",
+    //               {
+    //                 className: "col-md-12 col-6 pl-0 pr-0",
+    //               },
+    //               React.createElement("input", {
+    //                 type: "text",
+    //                 value: character.playerName ? character.playerName : "",
+    //                 onChange: function onChange(e) {
+    //                   return _this2.updateCharacter(
+    //                     "playerName", //attibute - priority
+    //                     e.target.value
+    //                   );
+    //                 },
+    //               }),
+    //               React.createElement("label", null, "Owner")
+    //             )
+    //           )
+    //         )
+    //       )
+    //     ),
+    //     React.createElement(
+    //       "div",
+    //       {
+    //         className: "row",
+    //       },
+    //       React.createElement(
+    //         "div",
+    //         {
+    //           className: "col-md-5",
+    //         },
+    //         React.createElement(
+    //           "div",
+    //           {
+    //             className: "row",
+    //           },
+    //           React.createElement(
+    //             "div",
+    //             {
+    //               className: "col-3 pr-1",
+    //             },
+    //             React.createElement(
+    //               "div",
+    //               {
+    //                 className: "d-and-d-box gray",
+    //               },
+    //               React.createElement(StatBox, {
+    //                 label: "Strength",
+    //                 name: "str",
+    //                 value: character.str,
+    //                 onChange: function onChange(name, value) {
+    //                   _this2.updateCharacter(name, value);
+    //                 },
+    //               }),
+    //               React.createElement(StatBox, {
+    //                 label: "Dexterity",
+    //                 name: "dex",
+    //                 value: character.dex,
+    //                 onChange: function onChange(name, value) {
+    //                   _this2.updateCharacter(name, value);
+    //                 },
+    //               }),
+    //               React.createElement(StatBox, {
+    //                 label: "Constitution",
+    //                 name: "con",
+    //                 value: character.con,
+    //                 onChange: function onChange(name, value) {
+    //                   _this2.updateCharacter(name, value);
+    //                 },
+    //               }),
+    //               React.createElement(StatBox, {
+    //                 label: "Intelligence",
+    //                 name: "int",
+    //                 value: character["int"],
+    //                 onChange: function onChange(name, value) {
+    //                   _this2.updateCharacter(name, value);
+    //                 },
+    //               }),
+    //               React.createElement(StatBox, {
+    //                 label: "Wisdom",
+    //                 name: "wis",
+    //                 value: character.wis,
+    //                 onChange: function onChange(name, value) {
+    //                   _this2.updateCharacter(name, value);
+    //                 },
+    //               }),
+    //               React.createElement(StatBox, {
+    //                 label: "Charisma",
+    //                 name: "cha",
+    //                 value: character.cha,
+    //                 onChange: function onChange(name, value) {
+    //                   _this2.updateCharacter(name, value);
+    //                 },
+    //               })
+    //             )
+    //           ),
+    //           React.createElement(
+    //             "div",
+    //             {
+    //               className: "col-md-9",
+    //             },
+    //             React.createElement(
+    //               "div",
+    //               {
+    //                 className: "d-and-d-box gray",
+    //               },
+    //               React.createElement(
+    //                 "div",
+    //                 {
+    //                   className: "row",
+    //                 },
+    //                 React.createElement(
+    //                   "div",
+    //                   {
+    //                     className: "col-4 pr-2",
+    //                   },
+    //                   React.createElement(StatBox2, {
+    //                     classes: "shield",
+    //                     labelTop: "Armour",
+    //                     label: "Class",
+    //                     name: "ac",
+    //                     value: character.ac,
+    //                     onChange: function onChange(name, value) {
+    //                       _this2.updateCharacter(name, value);
+    //                     },
+    //                   })
+    //                 ),
+    //                 React.createElement(
+    //                   "div",
+    //                   {
+    //                     className: "col-4 pr-2 pl-2",
+    //                   },
+    //                   React.createElement(StatBox2, {
+    //                     label: "Initiative",
+    //                     name: "init",
+    //                     value: character.init,
+    //                     onChange: function onChange(name, value) {
+    //                       _this2.updateCharacter(name, value);
+    //                     },
+    //                   })
+    //                 ),
+    //                 React.createElement(
+    //                   "div",
+    //                   {
+    //                     className: "col-4 pl-2",
+    //                   },
+    //                   React.createElement(StatBox2, {
+    //                     label: "Speed",
+    //                     name: "speed",
+    //                     value: character.speed,
+    //                     onChange: function onChange(name, value) {
+    //                       _this2.updateCharacter(name, value);
+    //                     },
+    //                   })
+    //                 )
+    //               ),
+    //               React.createElement(
+    //                 "div",
+    //                 {
+    //                   className: "d-and-d-box white",
+    //                   style: {
+    //                     borderRadius: "8px 8px 0 0",
+    //                     marginBottom: "5px",
+    //                     paddingBottom: "5px",
+    //                   },
+    //                 },
+    //                 React.createElement(
+    //                   "div",
+    //                   {
+    //                     className: "d-and-d-gray-text",
+    //                   },
+    //                   React.createElement(
+    //                     "label",
+    //                     {
+    //                       style: {
+    //                         width: "95px",
+    //                       },
+    //                     },
+    //                     "Hit Point Maximum"
+    //                   ),
+    //                   React.createElement("input", {
+    //                     type: "text",
+    //                     style: {
+    //                       width: "calc(100% - 95px)",
+    //                     },
+    //                     className: "d-and-d-linput",
+    //                     value: character.maxHp ? character.maxHp : "",
+    //                     onChange: function onChange(e) {
+    //                       return _this2.updateCharacter(
+    //                         "maxHp",
+    //                         e.target.value
+    //                       );
+    //                     },
+    //                   })
+    //                 ),
+    //                 React.createElement("input", {
+    //                   type: "text",
+    //                   className: "d-and-d-cinput",
+    //                   value: character.hp ? character.hp : "",
+    //                   onChange: function onChange(e) {
+    //                     return _this2.updateCharacter("hp", e.target.value);
+    //                   },
+    //                 }),
+    //                 React.createElement(
+    //                   "label",
+    //                   {
+    //                     className: "d-and-d-title",
+    //                     style: {
+    //                       marginTop: "5px",
+    //                     },
+    //                   },
+    //                   "Current Hit Points"
+    //                 )
+    //               ),
+    //               React.createElement(
+    //                 "div",
+    //                 {
+    //                   className: "d-and-d-box white mb-2",
+    //                   style: {
+    //                     borderRadius: "0 0 8px 8px",
+    //                     paddingBottom: "5px",
+    //                   },
+    //                 },
+    //                 React.createElement("input", {
+    //                   type: "text",
+    //                   className: "d-and-d-cinput",
+    //                   value: character.tempHp ? character.tempHp : "",
+    //                   onChange: function onChange(e) {
+    //                     return _this2.updateCharacter("tempHp", e.target.value);
+    //                   },
+    //                 }),
+    //                 React.createElement(
+    //                   "label",
+    //                   {
+    //                     className: "d-and-d-title",
+    //                     style: {
+    //                       marginTop: "5px",
+    //                     },
+    //                   },
+    //                   "Temporary Hit Points"
+    //                 )
+    //               )
+    //             ),
+    //             React.createElement(
+    //               "div",
+    //               {
+    //                 className: "d-and-d-box mt-3",
+    //               },
+    //               React.createElement(AttackTable, {
+    //                 rows: 2,
+    //                 name: "attacks",
+    //                 value: character.attacks,
+    //                 onChange: function onChange(name, value) {
+    //                   _this2.updateCharacter(name, value);
+    //                 },
+    //               }),
+    //               React.createElement("textarea", {
+    //                 value: character.attacksText ? character.attacksText : "",
+    //                 onChange: function onChange(e) {
+    //                   return _this2.updateCharacter(
+    //                     "attacksText",
+    //                     e.target.value
+    //                   );
+    //                 },
+    //                 rows: 2,
+    //               }),
+    //               React.createElement(
+    //                 "label",
+    //                 {
+    //                   className: "d-and-d-title",
+    //                   style: {
+    //                     marginTop: "10px",
+    //                   },
+    //                 },
+    //                 "Attacks & Spellcasting"
+    //               )
+    //             ),
+    //             React.createElement(
+    //               "div",
+    //               {
+    //                 className: "d-and-d-box mt-4",
+    //               },
+    //               React.createElement("textarea", {
+    //                 value: character.featuresTraits
+    //                   ? character.featuresTraits
+    //                   : "",
+    //                 onChange: function onChange(e) {
+    //                   return _this2.updateCharacter(
+    //                     "featuresTraits",
+    //                     e.target.value
+    //                   );
+    //                 },
+    //                 rows: 6,
+    //               }),
+    //               React.createElement(
+    //                 "label",
+    //                 {
+    //                   className: "d-and-d-title",
+    //                   style: {
+    //                     marginTop: "10px",
+    //                   },
+    //                 },
+    //                 "Features & Traits"
+    //               )
+    //             )
+    //           )
+    //         ),
+    //         React.createElement(
+    //           "div",
+    //           {
+    //             className: "mt-2",
+    //           },
+    //           React.createElement(StatRow, {
+    //             classes: "rounded rounded-sides",
+    //             label: "Passive Wisdom (Perception)",
+    //             name: "passivePerception",
+    //             value: character.passivePerception,
+    //             onChange: function onChange(name, value) {
+    //               _this2.updateCharacter(name, value);
+    //             },
+    //           })
+    //         ),
+    //         React.createElement(
+    //           "div",
+    //           {
+    //             className: "d-and-d-box mt-4",
+    //           },
+    //           React.createElement(
+    //             "div",
+    //             {
+    //               className: "row",
+    //             },
+    //             React.createElement(
+    //               "div",
+    //               {
+    //                 className: "col",
+    //               },
+    //               React.createElement("textarea", {
+    //                 className: "d-and-d-equipment-indent",
+    //                 value: character.equipment ? character.equipment : "",
+    //                 onChange: function onChange(e) {
+    //                   return _this2.updateCharacter(
+    //                     "equipment",
+    //                     e.target.value
+    //                   );
+    //                 },
+    //                 rows: 10,
+    //               })
+    //             ),
+    //             React.createElement(
+    //               "div",
+    //               {
+    //                 className: "col-md-12",
+    //               },
+    //               React.createElement("textarea", {
+    //                 value: character.equipment2 ? character.equipment2 : "",
+    //                 onChange: function onChange(e) {
+    //                   return _this2.updateCharacter(
+    //                     "equipment2",
+    //                     e.target.value
+    //                   );
+    //                 },
+    //                 rows: 4,
+    //               })
+    //             )
+    //           ),
+    //           React.createElement(
+    //             "label",
+    //             {
+    //               className: "d-and-d-title",
+    //               style: {
+    //                 marginTop: "10px",
+    //               },
+    //             },
+    //             "Equipment"
+    //           )
+    //         )
+    //       )
+    //     )
+    //   )
+    // );
+
     return React.createElement(
       "div",
       {
-        className: "d-and-d-character-sheet container-xl mt-5 mb-5",
+        className: "d-and-d-character-sheet container-xl mt-5 mb-5 col-3",
       },
       React.createElement(
         "div",
@@ -1693,7 +2164,7 @@ var DnDPetStatsSheet = /*#__PURE__*/ (function (_React$Component) {
           React.createElement(
             "div",
             {
-              className: "col-md-3 pr-2 pl-2",
+              className: "col-md-7 pr-2 pl-2",
             },
             React.createElement(
               "div",
@@ -1731,7 +2202,7 @@ var DnDPetStatsSheet = /*#__PURE__*/ (function (_React$Component) {
           React.createElement(
             "div",
             {
-              className: "col-md-2 pr-2 pl-2",
+              className: "col-md-5 pr-2 pl-2",
             },
             React.createElement(
               "div",
@@ -1795,7 +2266,7 @@ var DnDPetStatsSheet = /*#__PURE__*/ (function (_React$Component) {
           React.createElement(
             "div",
             {
-              className: "col-md-5",
+              className: "col-md-12",
             },
             React.createElement(
               "div",
@@ -1805,7 +2276,7 @@ var DnDPetStatsSheet = /*#__PURE__*/ (function (_React$Component) {
               React.createElement(
                 "div",
                 {
-                  className: "col-3 pr-1",
+                  className: "col-3 pr-2.5",
                 },
                 React.createElement(
                   "div",

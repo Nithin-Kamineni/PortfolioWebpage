@@ -1,0 +1,52 @@
+@import '../../ui/colors';
+@import '../../ui/values';
+
+.projects {
+  position: relative;
+  // padding: calc(#{$navbarheight} + 1rem) 0 2rem 0;
+  background-color: $lightbackground;
+  overflow-x: hidden;
+
+  .wrapper {
+    max-width: 1440px;
+    margin: 20px auto;
+    padding: 0 20x;
+    position: relative;
+
+    .projectsOpen {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: $lightwhite;
+      background: $primarylight;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 8px 10px;
+      font-family: 'Ubuntu Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .projectsClose {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      color: $lightwhite;
+      background: $primarylight;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 8px 10px;
+      font-family: 'Ubuntu Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+
+    .projects_content {
+      display: flex;
+      height: auto;
+      // position: relative;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3.6rem;
+    }
+  }
+}
